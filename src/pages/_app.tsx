@@ -1,11 +1,8 @@
 import React from 'react';
 import { AppProps } from 'next/app';
 import * as Sentry from '@sentry/node';
-import 'react-rangeslider/lib/index.css';
 
-import { Layout } from '~/components/layout';
-
-import '~/styles/index.css';
+import '../styles/index.css';
 
 Sentry.init({
   dsn: process.env.SENTRY_DSN,
@@ -15,9 +12,7 @@ Sentry.init({
 });
 
 const App: React.FC<AppProps> = ({ Component, pageProps }) => (
-  <Layout>
-    <Component {...pageProps} />
-  </Layout>
+  <Component {...pageProps} />
 );
 
 export default App;

@@ -1,21 +1,6 @@
 module.exports = {
-  extends: ['@mcansh/eslint-config/typescript'],
+  extends: 'steelbrain',
   rules: {
-    '@next/next/no-html-link-for-pages': ['warn', 'src/pages'],
-    'import/no-extraneous-dependencies': [
-      'error',
-      {
-        devDependencies: [
-          'src/__tests__/**/*',
-          'src/test-utils/index.tsx',
-          'src/@types/jest-dom.d.ts',
-          'next.config.js',
-          'prettier.config.js',
-          'stylelint.config.js',
-          'lint-staged.config.js',
-        ],
-      },
-    ],
     'consistent-return': 'off',
     'no-lonely-if': 'off',
     '@typescript-eslint/prefer-optional-chain': 'off',
@@ -25,6 +10,8 @@ module.exports = {
     '@typescript-eslint/no-non-null-assertion': 'off',
     'react-hooks/exhaustive-deps': 'off',
     'react/no-unescaped-entities': 'off',
+    'react/jsx-props-no-spreading': 'off',
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
     '@typescript-eslint/prefer-nullish-coalescing': 'off',
     'jsx-a11y/click-events-have-key-events': 'off',
     'jsx-a11y/anchor-is-valid': 'off',
