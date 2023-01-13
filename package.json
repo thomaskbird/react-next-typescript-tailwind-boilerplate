@@ -10,17 +10,18 @@
     "node": ">=10"
   },
   "scripts": {
-    "dev": "next dev -p 4000",
     "build": "next build",
-    "start": "next start -p 4000",
-    "type-check": "tsc",
+    "build-storybook": "build-storybook",
+    "dev": "next dev -p 4000",
+    "format": "prettier --write \"**/*.+(js|jsx|json|yml|yaml|css|less|scss|ts|tsx|md|graphql|mdx)\"",
     "lint": "eslint --cache --ext .js,.ts,.tsx ./ --fix",
     "lint:css": "stylelint './**/*.js' './**/*.jsx' './**/*.tsx' './**/*.ts'",
-    "test": "jest",
-    "format": "prettier --write \"**/*.+(js|jsx|json|yml|yaml|css|less|scss|ts|tsx|md|graphql|mdx)\"",
-    "validate": "npm-run-all --parallel lint lint:css format type-check test",
+    "start": "next start -p 4000",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "test": "jest",
+    "tailwind": "npx tailwindcss -i ./src/styles/styles.css -o ./src/styles/app.css",
+    "type-check": "tsc",
+    "validate": "npm-run-all --parallel lint lint:css format type-check test"
   },
   "husky": {
     "hooks": {
