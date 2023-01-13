@@ -19,7 +19,7 @@
     "start": "next start -p 4000",
     "storybook": "start-storybook -p 6006",
     "test": "jest",
-    "tailwind": "npx tailwindcss -i ./src/styles/styles.css -o ./src/styles/app.css",
+    "tailwind": "npx tailwindcss -i ./src/styles/styles.css -o ./src/styles/app.css --watch",
     "type-check": "tsc",
     "validate": "npm-run-all --parallel lint lint:css format type-check test"
   },
