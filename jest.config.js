@@ -6,6 +6,6 @@ module.exports = {
   testPathIgnorePatterns: ['/.next/', '/node_modules/', '/types/'],
   moduleNameMapper: {
     '\\.svg': '<rootDir>/__mocks__/svgrMock.js',
-    '~/(.*)': '<rootDir>/src/$1',
-  },
-};
+    '~/(.*)': '<rootDir>/src/$1'
+  }
+}

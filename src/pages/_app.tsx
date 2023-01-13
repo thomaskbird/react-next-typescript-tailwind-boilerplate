@@ -1,18 +1,24 @@
-import React from 'react';
-import { AppProps } from 'next/app';
-import * as Sentry from '@sentry/node';
+import '../styles/app.css';
 
-import '../styles/index.css';
+import React from 'react'
+import { AppProps } from 'next/app'
+import Footer from '~/components/Footer'
 
-Sentry.init({
-  dsn: process.env.SENTRY_DSN,
-  release: process.env.SENTRY_RELEASE,
-  enabled: process.env.NODE_ENV === 'production',
-  environment: process.env.ENV,
-});
+import { Provider } from 'react-redux';
+import { appStore } from '~/redux/app-reducers'
+
+const COMPONENT_NAME = 'App';
 
 const App: React.FC<AppProps> = ({ Component, pageProps }) => (
-  <Component {...pageProps} />
-);
+  <Provider store={appStore}>
+    <div className={`${COMPONENT_NAME}`}>
+      <div className="page-content container">
+        <Component {...pageProps} />
+      </div>
 
-export default App;
+      <Footer />
+    </div>
+  </Provider>
+)
+
+export default App

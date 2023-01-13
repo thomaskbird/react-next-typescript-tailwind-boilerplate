@@ -1,4 +1,4 @@
-const ReactComponent = 'div';
+const ReactComponent = 'div'
 
-export default 'SvgrURL';
-export { ReactComponent };
+export default 'SvgrURL'
+export { ReactComponent }

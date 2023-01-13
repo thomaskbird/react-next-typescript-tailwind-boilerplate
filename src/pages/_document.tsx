@@ -1,40 +1,29 @@
-import React from 'react';
+import React from 'react'
 import Document, {
   Html,
   Head,
   Main,
   NextScript,
-  DocumentContext,
-} from 'next/document';
-import { ServerStyleSheet } from 'styled-components';
-
-import { CSP } from '~/components/csp';
+  DocumentContext
+} from 'next/document'
+import { CSP } from '~/components/csp'
 
 export default class MyDocument extends Document {
-  public static async getInitialProps(ctx: DocumentContext) {
-    const sheet = new ServerStyleSheet();
-    const originalRenderPage = ctx.renderPage;
-
+  public static async getInitialProps (ctx: DocumentContext) {
     try {
-      ctx.renderPage = () =>
-        originalRenderPage({
-          enhanceApp: App => props => sheet.collectStyles(<App {...props} />),
-        });
-
-      const initialProps = await Document.getInitialProps(ctx);
+      const initialProps = await Document.getInitialProps(ctx)
       return {
         ...initialProps,
         styles: [
-          ...(Array.isArray(initialProps.styles) ? initialProps.styles : []),
-          ...sheet.getStyleElement(),
-        ],
-      };
-    } finally {
-      sheet.seal();
+          ...(Array.isArray(initialProps.styles) ? initialProps.styles : [])
+        ]
+      }
+    } catch (e) {
+      console.log('Error: ', e)
     }
   }
 
-  public render() {
+  public render () {
     return (
       <Html lang="en">
         <Head>
@@ -45,6 +34,6 @@ export default class MyDocument extends Document {
           <NextScript />
         </body>
       </Html>
-    );
+    )
   }
 }

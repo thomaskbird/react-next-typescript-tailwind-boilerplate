@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import React from 'react';
+import React from 'react'
 
 const useServiceWorker = () => {
   React.useEffect(() => {
@@ -9,15 +9,15 @@ const useServiceWorker = () => {
         'serviceWorker' in navigator
       ) {
         try {
-          await navigator.serviceWorker.register('/sw.js');
-          console.log('Service Worker registered successfully');
+          await navigator.serviceWorker.register('/sw.js')
+          console.log('Service Worker registered successfully')
         } catch (error) {
-          console.warn('Service Worker failed to register');
+          console.warn('Service Worker failed to register')
         }
       }
-    };
-    sw();
-  }, []);
-};
+    }
+    sw()
+  }, [])
+}
 
-export { useServiceWorker };
+export { useServiceWorker }
