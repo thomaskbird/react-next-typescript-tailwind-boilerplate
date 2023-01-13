@@ -5,3 +5,5 @@ node_modules
 coverage
 .eslintcache
 .idea
+src/styles/app.css
+
